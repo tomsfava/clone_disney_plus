@@ -7,7 +7,9 @@ function styles() {
         .pipe(gulp.dest('./dist/styles'));
 }
 
-exports.default = styles;
-exports.watch = function() {
+function watch() {
     gulp.watch('./src/styles/*.scss', gulp.parallel(styles));
 }
+
+exports.default = styles;
+exports.watch = watch;
