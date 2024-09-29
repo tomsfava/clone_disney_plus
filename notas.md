@@ -22,3 +22,26 @@ a função gulp.watch recebe dois argumentos, o diretório a ser observado e a f
 depois de configurado o sass e o watch, criamos o arquivo index.html definimos sua linguagem para pt-br damos um título e linkamos main.css dentro da pasta dist;  
 nesse projeto estaremos realizando o versionamento, ou seja a cada aula vamos subir nosso progresso para o repositório no github;
 a mensagem do primeiro commit será 'setup do projeto';
+### Aula 2 - Crie o hero
+#### **Sobre a aula**
+* compreender a estrutura de um componente HTML;
+* dominar o uso de classes e estilos CSS;
+* praticar a criação de seletores CSS avançados.
+#### **Anotações**
+Vamos fazer uma estilização diferente, vamos criar componentes no CSS;  
+mas a primeira coisa que vamos fazer é configurar o gulp para que ele minifique as imagens, primeiro instalamos o gulp-imagemin na versão 7.1.0, depois fazemos o downgrade do gulp para a versão 4.0.2, dai importamos o imagemin criando a **const** imagemin e criamos a função images que segue a lógica gulp.src().pipe(imagemin()).pipe(gulp.dest);  
+feito isso extraímos a cor de fundo do site da Disney+ e criamos a variável no scss corDeFundo;  
+em seguida analisamos os font-sizes para poder componentezar os elementos, dessa forma notamos que todo texto tem o line-height 10px maior que font-size, então criamos um mixin para isso (text);  
+dai críamos um segundo mixin para title que inclui o mixin text mas altera a cor para corTextoSecundaria;  
+por fim criamos as classes text e text--variações e title e title--variações (small e big), cada uma delas vai incluir o mixin com o tamanho da fonte como parametro;  
+agora vamos ligar o watch com o script que configuramos no package.json, npm run dev;  
+vamos agora criar o hero, um hero é um banner, sempre que a gente tem uma imagem de fundo com uma chamada com texto e botões, é um hero;  
+criamos um arquivo adicional dentro de styles com o nome _hero.scss, dentro dele estilizamos a classe hero para ter o padding de 5.6vw, o min-height: 80vh e o background-image com url apontando para a imagem adequada;  
+o do professor ficou bem configurado, o meu cortou a imagem;  
+em seguida criamos a seção .hero, dentro dela uma div .hero__content que contem um h1 .hero__content__brand que contem a imagem do logo;  
+logo abaixo do h1 criamos um h3 . title--small seguido de um p com um a .link-text e um span .text;  
+no arquivo _hero.scss estilizamos com max-width: 640px; também o hero__content através do &;  
+dentro de hero__content através do & estilizamos hero__content__brand, definindo sua largura e suas margens;  
+ainda dentro de hero__content adicionamos o margin-bottom para .title--small e para o p;  
+agora criamos uma ul para os botões com os combos, cada li possui uma imagem, um botão e um span, o span possui a classe .text;  
+
