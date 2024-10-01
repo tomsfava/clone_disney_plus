@@ -74,5 +74,21 @@ precisamos agora repetir o processo para o botão em si, para isso criamos a fun
 dai chamamos removeActiveButton dentro do primeiro eventListener para o click do botão e por fim através de botao.target.classList.add, adicionamos a classe --is-active;  
 para remover o comportamento de mudança no box-model por causa da borda, adicionamos a todos os elementos uma borda inferior de 4px solida transparente, ou seja, quando o botão estiver ativo, a borda será somente pintada da cor e assim não mudará o tamanho do elemento;  
 vamos fazer o terceiro commit agora;  
+### Aula 5 - Crie a listagem de planos
+#### **Sobre a aula**
+* criar uma seção de listagem de planos em um site;
+* estilizar elementos de acordo com as diretrizes de design;
+* utilizar seletores CSS e classes.
+#### **Anotações**
+Agora vamos fazer a seção escolha seu plano, onde vamos ter 3 colunas, cada uma com um plano, o preço do plano, uma descrição e um botão para assinar, abaixo das colunas um disclaimer;  
+o professor está chamando a atenção de que não faz muito sentido usar a tag h3 para o preço nessa seção, já que não é semanticamente um título;  
+primeiro criamos a seção .plans, dentro dela um h2 .title--big Escolha seu plano, em seguida uma ul . plans__list e 3 lis .plans__list__item, dentro deles uma img, um strong (ao invés de um h3) com a classe title--small, seguido de um p . text--big com a descrição do plano seguido de um botão com a classe button ASSINE AGORA, aplicamos também essa classe button aos botões do hero, já que os botões de ambas as seções possuem a mesma estilização adicionamos essa estilização ao arquivo main.scss, dessa forma os botões da aba na seção shows não recebem essa estilização;  
+na estilização do arquivo _plans.scss adicionamos o padding a seção toda, definimos o text-align center para o h2 dai definimos que a ul tem display: flex; e justify-content: space-around; adicionamos também uma margem superior de 40px;  
+todos os itens terão text-align: center; o padding, o max-width: 304px; e o width: 100%;  
+estilizamos o item do meio através do pseudo seletor :nth-child(2) e adicionamos a imagem de fundo adequada além de definir o background-size para contain;  
+definimos também a altura máxima da imagem além da largura para 100%, assim todos os itens aparecem dentro do container, que é menor que o viewport;  
+definimos que o display do strong é block, para que ele ocupe sua propria linha e adicionamos uma margem superior a ele;  
+por fim, depois da ul adicionamos um p .text--small que vai ter também o text-align center;  
+subimos aqui o quarto commit
 
 
