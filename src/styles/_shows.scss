@@ -1,0 +1,45 @@
+@use 'variaveis';
+
+.shows {
+    padding: 1.6vw 4.4vw;
+
+    &__list {
+        margin-top: 35.2px;
+        display:none;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 19.2px;
+
+        &--is-active {
+            display: grid;
+        }
+
+        &__item {
+
+            img {
+                max-width: 100%;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        justify-content: center;
+        
+        &__button {
+            color:variaveis.$corTextoSecundaria;
+            font-size: 16px;
+            border: none;
+            border-bottom: 4px solid transparent;
+            padding-bottom: 4px;
+            background: none;
+            text-transform: uppercase;
+            margin: 0 1vw;
+            cursor: pointer;
+
+            &--is-active {
+                border-bottom: 4px solid variaveis.$corTextoSecundaria;
+            }
+        }
+    }
+}

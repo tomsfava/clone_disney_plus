@@ -43,5 +43,12 @@ logo abaixo do h1 criamos um h3 . title--small seguido de um p com um a .link-te
 no arquivo _hero.scss estilizamos com max-width: 640px; também o hero__content através do &;  
 dentro de hero__content através do & estilizamos hero__content__brand, definindo sua largura e suas margens;  
 ainda dentro de hero__content adicionamos o margin-bottom para .title--small e para o p;  
-agora criamos uma ul para os botões com os combos, cada li possui uma imagem, um botão e um span, o span possui a classe .text;  
+agora criamos uma ul para os botões com os combos, cada li possui uma imagem, um botão e um span, o span possui a classe .text; o li possui a classe hero__content__combos__combo e a ul a classe hero__content__combos; (um colega ressaltou que essa é a maneira incorreta de usar o BEM, o correto seria hero__content, hero__combos, hero__combo);  
+em seguida em um p . text--small falando que o preço pode variar de acordo com a plataforma;  
+dai para poder usar nossas variáveis na estilização criamoso arquivo _variaveis.scss e transferimos nossas variáveis para ele;  
+por fim, importamos a fonte avenir que já estava salva no material de apoio através da sintaxe @font-face {font-family: Avenir; src url(); font-weight: 400}, repetimos o processo para o font-weight: 700;  
+adicionamos a fonte ao body;  
+por fim nós configuramos o background-size do hero para cover, dessa forma a imagem de fundo vai ser ampliada e o css tentara usar ela de forma completa, porem, isso funcionou para o professor mas não funcionou para mim, a escala só fica correta no meu navegador alterando o zoom para 80%;  
+um colega resolveu isso removendo 20% de todas as medidas, é isso que eu vou fazer agora;  
+
 

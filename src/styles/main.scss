@@ -1,5 +1,6 @@
 @use 'variaveis';
 @use 'hero';
+@use 'shows';
 
 @font-face {
     font-family: Avenir;
@@ -18,26 +19,27 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: Avenir, sans-serif;
 }
 
 body {
     background-color: variaveis.$corDeFundo;
-    font-family: Avenir, sans-serif;
+
 }
 
-@mixin text($fontSize: 16px) {
+@mixin text($fontSize: 12.8px) {
     font-size: $fontSize;
-    line-height: $fontSize + 10px;
+    line-height: $fontSize + 8px;
     color: variaveis.$corTextoPrincipal;
 }
 
-@mixin title($fontSize: 40px) {
+@mixin title($fontSize: 32px) {
     @include text($fontSize);
     color: variaveis.$corTextoSecundaria;
 }
 
 .text--big {
-    @include text(18px);
+    @include text(14.4px);
 }
 
 .text {
@@ -45,11 +47,11 @@ body {
 }
 
 .text--small {
-    @include text(12px);
+    @include text(9.6px);
 }
 
 .title--big {
-    @include title(44px);
+    @include title(35.2px);
 }
 
 .title {
@@ -57,11 +59,11 @@ body {
 }
 
 .title--small {
-    @include title(28px);
+    @include title(22.4px);
 }
 
 .link-text {
-    @include text(18px);
+    @include text(14.4px);
     color: variaveis.$corTextoSecundaria;
     text-decoration: underline;
 }
