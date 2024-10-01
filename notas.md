@@ -50,5 +50,29 @@ por fim, importamos a fonte avenir que já estava salva no material de apoio atr
 adicionamos a fonte ao body;  
 por fim nós configuramos o background-size do hero para cover, dessa forma a imagem de fundo vai ser ampliada e o css tentara usar ela de forma completa, porem, isso funcionou para o professor mas não funcionou para mim, a escala só fica correta no meu navegador alterando o zoom para 80%;  
 um colega resolveu isso removendo 20% de todas as medidas, é isso que eu vou fazer agora;  
+finalmente meu site cabe na tela do navegador;  
+### Aula 4 - Crie a seção de atrações
+#### **Sobre a aula**
+* aprender a criar uma seção de atrações em um site;
+* desenvolver habilidades de manipulação de eventos em JavaScript;
+* praticar estilização CSS para destacar a aba ativa.
+#### **Anotações**
+Vamos criar a seção de atrações, nela temos um grid com as atrações e um menu de navegação por abas;  
+a seção tem a classe .shows, dentro dela uma ul .shows__list e dentro dela 6 li .shows__list__item;  
+dai estilizamos, dessa vez já estou fazendo os cálculos de -20% para já ajeitar para minha tela;  
+em seguida, acima do ul criamos o nav . shows__tabs e dentro dele 3 button .shows__tabs__button;  
+repetimos a estrutura da ul mais 2 vezes para termos 3 listas de programas, uma para cada botão, vamos agora adicionar atributos aos botões e as uls para que possamos acessá-los através do JS;  
+para os botões criamos o atributo data-tab-button, cada qual com o seu valor, e para as uls o atributo data-tab-id cada um com seu valor respectivo;  
+agora vem a programação, a primeira coisa é adicionar um eventListener para o document com 'DOMContentLoaded' e uma função, dentro da função criamos a const buttons que será um querySelectorAll apontando para o atributo data-tab-button;  
+dai vamos iterar todos os botões dentro da const e vamos adicionar um eventListener para buttons[i] com 'click' e uma função(botao);  
+dentro da função criamos a const targetTab que vai ser igual a botao.target.dataset.tabButton (dataset.tabButton acessa o valor de data-tab-button);  
+em seguida criamos outra const tab que será document.querySelector (\`\[data-tab-id=${targetTab}\]\`), essa const contem o elemento ao qual vamos adicionar a classe --is-active, mas antes disso precisamos remover o --is-active da aba atual, para isso criamos a função hideAllTabs;  
+essa função contem a const tabsContainer que é igual a document.querySelectorAll('\[data-tab-id\]);  
+dai iteramos entre os elementos da const e com classList.remove, removemos a classe --is-active;  
+assim sendo, dentro do primeiro laço, ao clicar o botão rodamos hideAllTabs e em seguida com tab.classList.add, adicionamos a classe --is-active a aba selecionada;  
+precisamos agora repetir o processo para o botão em si, para isso criamos a função removeActiveButton, que funciona da mesma forma que hideAllTabs, criamos a const buttons que é o querySelectorAll para o atributo data-tabs-button e em seguida iteramos dentro da const removendo a classe --is-active de todos os botões;  
+dai chamamos removeActiveButton dentro do primeiro eventListener para o click do botão e por fim através de botao.target.classList.add, adicionamos a classe --is-active;  
+para remover o comportamento de mudança no box-model por causa da borda, adicionamos a todos os elementos uma borda inferior de 4px solida transparente, ou seja, quando o botão estiver ativo, a borda será somente pintada da cor e assim não mudará o tamanho do elemento;  
+vamos fazer o terceiro commit agora;  
 
 
