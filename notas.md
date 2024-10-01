@@ -101,5 +101,28 @@ definimos para .watch-anywhere o padding padrão e o display grid com 2 colunas 
 em seguida definimos o max-width da img para 100%, para que ela respeite a proporção do display;  
 em seguida estilizamos a div, que tem um padding lateral e dentro dela estilizamos o h2 que tem um margin-bottom;  
 o quinto commit vai somente até ai.
+### Aula 7 - Crie a seção "Dispositivos disponíveis"
+#### **Sobre a aula**
+* restruturar uma seção de conteúdo com imagem e lista;
+* aplicar estilos CSS para formatar a seção;
+* resolver problemas de alinhamento e vazamento de conteúdo.
+#### **Anotações**
+essa seção não é muito diferente da seção anterior, porem, ao invés de uma imagem na esquerda e uma div na direita, o que temos é uma imagem no fundo e a div por cima, isso é feito através do position: absolute;  
+Então copiamos a seção anterior e alteramos os valores necessários, já que existe essa repetição de estrutura de seção, podemos copiar o conteúdo do arquivo _watch-anywhere.scss para o arquivo main.scss e criamos um nome de classe mais generico .image-text-section, para isso é necessário fazer as alterações das classes dos elementos dentro do bloco também;  
+para esse caso específico vamos criar um modificador para esse bloco no caso --image-full-width, assim dentro da estilização de image-text-section estilizamos &--image-full-width para ter display: block (isso inicialmente fará com que a imagem aparece acima do __content, resolveremos isso com o position absolute do __content);  
+definimos que a width da img é 100%, para que essa ocupe a section inteira;  
+agora estilizamos o __content para position absolute, o top igual ao padding, a altura de 100% o display flex para podermos alinhar de forma mais facil, mudamos a direção do flex para coluna e por fim justify-content center;  
+dessa forma a div __content escapou do nosso container e foi lá pra cima no site, na seção hero;  
+precisamos fazer com que nosso container prenda o __content, fazemos isso adicionando o position relative ao container (section .image-text-section--image-full-width);  
+isso conteve o __content, porem precisamos reposicioná-lo, já que ele ficou na esquerda da imagem e nós queremos ele na direita;  
+para isso adicionamos uma propriedade left: 50% assim o __content ficara na metade do container, porém, dessa forma ele escapa para fora, vamos resolver isso adicionando uma propriedade width: calc(50% - 4.4vw), lembrando que 4.4 vw é o valor do padding da seção;  
+terminada essa seção, vamos fazer a próxima, que é uma lista horizontal dos dispositivos onde o disney+ está disponível;  
+primeiro então criamos a seção que vai conter uma lista com 4 li, cada li vai conter uma imagem um h4.title--small e uma ul.text, cada ul vai conter o numero de lis de acordo com o site da disney;  
+damos a seção a classe devices e criamos o arquivo _devices.scss, nesse estilizamos o padding da sessão em seguida o título da sessão, que possui a classe title, e vai ter o text-align center e um margin-bottom;  
+em seguida estilizamos devices__list (ul) para ter display grid, o gap apropriado e o grid-template-columns para repeat 4 1fr;  
+dentro desse estilizamos o devices__list__item para que tenha o text-align: center;  
+o h4 dentro dele vai ter suas margens, o li tera list-styles: none;  
+o img tera o max-width: 100% ou seja cada imagem ocupará todo o li;  
+até aqui vai o sexto commit;  
 
 
