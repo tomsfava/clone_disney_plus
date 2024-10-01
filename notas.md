@@ -89,6 +89,17 @@ estilizamos o item do meio através do pseudo seletor :nth-child(2) e adicionamo
 definimos também a altura máxima da imagem além da largura para 100%, assim todos os itens aparecem dentro do container, que é menor que o viewport;  
 definimos que o display do strong é block, para que ele ocupe sua propria linha e adicionamos uma margem superior a ele;  
 por fim, depois da ul adicionamos um p .text--small que vai ter também o text-align center;  
-subimos aqui o quarto commit
+subimos aqui o quarto commit.  
+### Aula 6 - Crie a seção "Assista do seu jeito"
+#### **Sobre a aula**
+* criar uma seção de conteúdo com imagem e texto;
+* aplicar estilos CSS para formatar a seção.
+#### **Anotações**
+essa seção é super simples, é uma imagem a esquerda com um titulo e um texto a direita;  
+então criamos a seção .watch-anywhere, dentro dela uma img e uma div .watch-anywhere__content;  
+definimos para .watch-anywhere o padding padrão e o display grid com 2 colunas e align-items: center;  
+em seguida definimos o max-width da img para 100%, para que ela respeite a proporção do display;  
+em seguida estilizamos a div, que tem um padding lateral e dentro dela estilizamos o h2 que tem um margin-bottom;  
+o quinto commit vai somente até ai.
 
 
