@@ -123,6 +123,44 @@ em seguida estilizamos devices__list (ul) para ter display grid, o gap apropriad
 dentro desse estilizamos o devices__list__item para que tenha o text-align: center;  
 o h4 dentro dele vai ter suas margens, o li tera list-styles: none;  
 o img tera o max-width: 100% ou seja cada imagem ocupará todo o li;  
-até aqui vai o sexto commit;  
+até aqui vai o sexto commit; 
+### Aula 8 - Crie a FAQ
+#### **Sobre a aula**
+* compreender a estrutura e os componentes de uma seção de perguntas frequentes (FAQ);
+* aprender a aplicar transições CSS para melhorar a experiência do usuário;
+* praticar a criação de componentes reutilizáveis.
+#### **Anotações**
+vamos agora criar a seção de perguntas frequentes, que é composta de 4 accordions;  
+cada accordion vai ser um li de uma ul, cada li vai conter uma div pra pergunta e outra div pra resposta, criamos essa estrutura e em seguida criamos o _faq.scss para estilizá-la, a ul vai ter a classe faq__questions a li vai ter a classe faq__questions__item, a pergunta vai ter a classe faq__questions__item__question e a resposta faq__question__item__answer;  
+quanto a estilização é o padding padrão para a seção .faq, o h2 tem text-align center e uma margem inferior;  
+as li vão ter background-color e margem inferior;  
+estilizamos as perguntas para ter a cor branca, definimos o font-size, o padding, o display block e o cursor pointer;  
+ao answer adicionamos a classe text--big e estilizamos um padding;  
+agora vamos criar o + e o - do accordion através de um pseudo elemento css, temos dois o ::before e o ::after;  
+nesse caso vamos estilizar o pseudo elemento ::after a div __question, então digitamos &::after e dentro do bloco de estilo definimos o content para '-' (já que a pergunta está aberta), definimos o position absolute (o que vai requerer que definamos o position relative para o elemento pai), top 0 right=padding height:100%; display flex align-items center e font-size 40px;  
+por padrão as perguntas vem fechadas e com o sinal de +, vamos sumir com a resposta não com o display:none; mas sim com o height:0; o overflow:hidden e tambbém removendo o padding;  
+faremos o conteúdo voltar a ser visível através de um modificador --is-open adicionado a classe do elemento pai, .faq__questions__item--is-open, na estilização simplesmente dentro do bloco do .faq__questions__item adicionamos o &--is-open e dentro desse novo bloco estilizamos a classe da resposta: .faq__questions__item__answer, definindo sua height para auto e seu padding para o valor adequado (80% de 24px) e também alteramos o content no pseudoelemento after do elemento pergunta para que esse seja - ao invés de +;  
+quanto a programação criamos a const questions que vai ser um querySelectorAll para o atributo 'data-faq-question' que adicionamos a todos os elementos pergunta (elemento clicável);  
+em seguida iteramos por todos os elementos de questions com um addEventListener('click', abreOuFechaResposta), ou seja, para cada questão que for clicada, roda a função abreOuFechaResposta, falta somente criar essa função;  
+a função recebe como paremetro elemento, sendo que elemento nada mais é do que o elemento clicável dentro do laço anterior, dentro da função criamos a const classe que contem a classe que sera alternada através do toggle: faq__questions__item--is-open;  
+em seguida criamos a const elementoPai = elemento.target.parentNode; já que o elemento clicável é a pergunta mas o elemento que recebe a alternância de classe é o elemento pai, a div .faq__question__item;  
+terminamos a função codificando elementoPai.classList.toggle(classe); dessa forma nosso accordion já está funcionando, falta somente adicionar um efeito de transição mais amigável, faremos isso através do sass;  
+simplesmente ao elemento já aparente, adicionamos a propriedade transition com o valor que será 'transicionado': height, o tempo de transição: .5s e o efeito: ease;  
+um pequeno problema é que estava havendo também uma animação lateral para o texto dentro da div answer, isso ocorre porque o padding lateral também está transicionando de 0 para 19.2, removemos esse comportamento adicionando o padding lateral na div sem o modificador do elemento pai, dessa forma o texto simplesmente desce junto com a div no momento da interação;  
+porem com essa estilização adicionamos o efeito de transição somente para a abertura do accordion, para adicionar esse efeito também no fechamento precisamos adicionar a propriedade transition com os mesmos valores também na div answer sem o modificador do elemento pai;  
+### Aula 9 - Criando o rodapé
+#### **Sobre a aula** 
+* compreender a estrutura e os elementos de um rodapé web;
+* aprender a estilizar elementos de um rodapé com CSS;
+* praticar o uso de variáveis CSS para gerenciar estilos.
+#### **Anotações**
+O rodapé possui um logo, uma listagem de links, dois paragrafos .text--small;  
+primeira coisa é agrupar todo o conteudo do footer (que por sinal, recebe uma classe footer para estilização) dentro de um container footer__container, esse container é centralizado através do max-width: 840px, width: 100% e margin 0 auto, também usamos o text-align: center e damos um padding-bottom de 20px;  
+dentro dele criamos uma imagem com a classe footer__logo e estilizamos ela para possuir a largura de 80px e margin: 0 auto 10px;  
+em seguida criamos uma ul classe footer__links que é estilizada para ter um margin-bottom de 16px, um display flex, um align-items center e definimos o flex-wrap para wrap e o justify-content center;  
+em seguida, dentro dessa estilização estilizamos os itens que possuem a classe footer__links__item, seu display é inline-block, e dentro dessa estilizamos os links para possuirem text-decoration none, adicionamos um padding a cada item além do display block, ainda dentro de a estilizamos o pseudo-seletor :hover para ter uma variação de cor;  
+ainda dentro de footer estilizamos os paragrafos para possuirem uma margin-bottom de 16px;  
+entre os links existe um seletor de linguagem, criamos esse elemento através da tag select, ela vai estar contida na div .language-selector, que além do select vai conter uma imagem com o icone do globo, o select vai conter duas tags option, uma com o conteúdo English e a outra Português, essa vai possuir o atributo selected;   
+na última aula nós não subimos as atualizações para o github, então o commit atual vai conter tanto o arquivo _footer.scss quanto o arquivo _faq.scss, esse será o sétimo commit;  
 
 
