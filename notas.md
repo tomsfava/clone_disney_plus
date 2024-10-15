@@ -162,5 +162,22 @@ em seguida, dentro dessa estilização estilizamos os itens que possuem a classe
 ainda dentro de footer estilizamos os paragrafos para possuirem uma margin-bottom de 16px;  
 entre os links existe um seletor de linguagem, criamos esse elemento através da tag select, ela vai estar contida na div .language-selector, que além do select vai conter uma imagem com o icone do globo, o select vai conter duas tags option, uma com o conteúdo English e a outra Português, essa vai possuir o atributo selected;   
 na última aula nós não subimos as atualizações para o github, então o commit atual vai conter tanto o arquivo _footer.scss quanto o arquivo _faq.scss, esse será o sétimo commit;  
+### Aula 10 - Criando o cabeçalho
+#### **Sobre a aula**
+* compreender a estrutura HTML e CSS do cabeçalho;
+* aplicar técnicas de responsividade;
+* implementar comportamentos interativos.
+#### **Anotações**
+Primeira coisa notável nessa aula é sua duração de 40 minutos, sobre o cabeçalho em si nota-se o comportamento de que na primeira seção somente o botão de entrar é aparente, mas conforme ocorre a rolagem o logo e o botão de 'ASSINE AGORA' surgem, o cabeçalho é fixo no topo da página;  
+primeira coisa criamos a tag header com a classe header, dentro dela, em seguida um container com a classe header__container;  
+próxima ação é substituir a tag h1 que continha a imagem do logo por uma div, em seguida recriamos a tag h1, só que agora no cabeçalho, tornando mais fácil a identificação do título da página no seu local adequado, o cabeçalho;  
+assim, após o h1 que contém a imagem do logo, criamos uma ul .header__links com dois li .header__links__item, cada um com um link contendo primeiro o 'Assine agora' e em segundo 'Entrar';  
+ambos os links recebem a classe button;  
+em seguida criamos a estrutura de estlização com o header no topo e em seguida paralelos as classes __container, __logo e __links que por sua vez contem __item;  
+o contaier do header não possui limitação de largura; ele possui padding de 8 e 36 e o display flex;  além de um justify-content space-beetween, que vai separar o h1 (footer__logo) da ul (footer__links);  
+o logo vai ter max-width de 80px com width de 100% e os links vão ter display flex;  
+depois dessa estilizaçao inicial notamos que a regra genérica do button contem um margin-top e bottom que não é necessario em todos os botões, somente em alguns, vamos retirá-lo da regra em main e adicioná-lo nas seções adequadas;  
+
+
 
 
