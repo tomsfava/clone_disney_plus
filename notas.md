@@ -176,7 +176,36 @@ ambos os links recebem a classe button;
 em seguida criamos a estrutura de estlização com o header no topo e em seguida paralelos as classes __container, __logo e __links que por sua vez contem __item;  
 o contaier do header não possui limitação de largura; ele possui padding de 8 e 36 e o display flex;  além de um justify-content space-beetween, que vai separar o h1 (footer__logo) da ul (footer__links);  
 o logo vai ter max-width de 80px com width de 100% e os links vão ter display flex;  
-depois dessa estilizaçao inicial notamos que a regra genérica do button contem um margin-top e bottom que não é necessario em todos os botões, somente em alguns, vamos retirá-lo da regra em main e adicioná-lo nas seções adequadas;  
+depois dessa estilizaçao inicial notamos que a regra genérica do button contem um margin-top e bottom que não é necessario em todos os botões, somente em alguns, vamos retirá-lo da regra em main e adicioná-lo nas seções adequadas (hero e plans); 
+em seguida vamos criar estilizações para modificadores dos botões, será tanto o botão secundário, azul, quanto o botão escuro, preto com transparência 0.8, para isso criamos as variáveis das cores;  
+estilizamos o height do botão dentro do header para ele ser um pouco menor e adicionamos as classes adequadas aos botões;  
+agora vamos esconder os botões que ficam escondidos no topo da página mas que passam a aparecer conforme a rolagem, para isso criamos a classe hidden e definimos o visibility para hidden;  
+agora vamos definir o positon sticky para o header, com top e left 0;  
+agora vem a programação, primeiro comentamos cada parte do código explicando o que cada uma faz, em seguida criamos duas const a const heroSection que contem o elemento com a classe hero e em seguida a const alturaHero que contem heroSection.clientHeight;  
+em seguida vamos criar um eventListener para o window, o evento será o scroll e a função vai conter uma const posicaoAtual que vai conter window.scrollY;  
+criamos essa constante para compará-la com a alturaHero, fazemos isso através de um if (posicaoAtual>alturaHero);  
+porém, já que tem muito mais posiçoes > alturaHero, podemos inverter a lógica, deixar os elementos visíveis por padrão e ocultá-los quando a posição for menor que alturaHero;  
+vamos então alterar também a lógica do css, ao invés de adicionar a classe hidden ao botão e ao logo, vamos adicionar o modificador --is-hidden para o header, já que no comportamento original a bara do header também some, então quando existe o modificador o background-color vai ser transparent e o header__logo e o header__links__item:first-child terão opacity:0; porém, com esse método o botão fica invisível porém segue clicável, corrigimos isso adicionando o visibility: hidden;  
+agora é simplesmente criar funções que adicionam e removem a classe com o modificador, fazemos isso criando uma const para o header com o querySelector e em seguida manipulamos o elemento através do header.classList.add ou classList.remove respectivamente para cada função, adicionamos ambas no funcionamento do if else dentro do eventListener do scroll;  
+por fim adicionamos a propriedade transition em todos os elementos com e sem o modificador, no caso dos botões ela aponta para o opacity e no caso do header em si aponta para o background-color;  
+por fim vamos subir a prioridade do header com o z-index, já que ele estava sendo coberto pela imagem do rei leão;  
+até aqui vai o oitavo commit;  
+### Aula 11 - Realize o deploy
+#### **Sobre a aula**
+* compreender a importância da responsividade em design web;
+*aprender a aplicar estilos responsivos usando CSS;
+* praticar habilidades de deploy de um projeto web.
+#### **Anotações**
+adicionamos medias queries nos arquivos devices, plans shows e main, no prmeiro reduzimos a quantidade de colunas para duas, no segundo alteramos o display da lista de planos para block, no terceiro também reduzimos as colunas para duas e no último alteramos o display da image-text-section para block e no caso do modificador --image-full-width, dentro do __content, alteramos o display para block o position para relative o left para 0 e o width para 100%;  
+em seguida, no arquivo main vamos adicionar media queries para os font-sizes dos titles, decidimos não fazer o mesmo para os texts já que com a redução de 20% que realizamos anteriormente a diferença ficou insignificante;  
+agora vamos também estilizar a responsividade do hero, primeiro alterando a imagem do bg-img para a imagem adequada a celular, essa imagem ficava sob a logo, para resolver isso aumentamos o padding (o bg-img ocupa o padding, a logo não), também ajustamos o bg-size para contain (o que ajusta as proporções da imagem) e o bg-repeat para no-repeat;  
+alteramos também o tamanho do logo para ter max-width de 180px;  
+definimos o display do __combos para block e definimos o width do __combo para 100% além de adicionar uma margin-bottom de 24px;  
+agora vamos ajustar o botão do cabeçalho para um tamanho menor, depois retornaremos ao hero;  
+primeira coisa é alterar o font-size dos botões para 13px, o padding para 8 no topo e embaixo e 11 nas laterais e também removemos o letter-spacing;  
+depois reduzimos o max-width do logo para 64px;  
+de volta ao hero, queremos que a imagem extrapole o header, para isso adicionamos uma margem negativa do tamanho do header, isso vai mover a section hero 55px pra cima, só que a logo ainda não está na posição correta, queremos mais 25px além dos 50vw que já haviamos definido para o padding, para isso usamos a função calc com os valores 50vw + 25px;  
+em seguida na section shows, nos botões das abas, queremos remover o wrap do white-space, ou seja, remover as quebras de linha, também queremos que o overflow do eixo x seja scroll, para permitir a rolagem, adicionamos um padding-left de 20px para ajustar a posição do primeiro botão
 
 
 

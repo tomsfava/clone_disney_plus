@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="dist/styles/main.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header header--is-hidden">
         <div class="header__container">
             <h1>
                 <img class="header__logo" src="./dist/images/disneyplus.svg" alt="Disney+">
@@ -169,7 +169,10 @@
         </div>
     </section>
     <section class="image-text-section image-text-section--image-full-width">
-        <img src="./dist/images/fundo_rei_leao.png" alt="Rei Leão">
+        <picture>
+            <source media="(max-width: 768px)" srcset="./dist/images/fundo_rei_leao_celular.png">
+            <img src="./dist/images/fundo_rei_leao.png" alt="Rei Leão">
+        </picture>
         <div class="image-text-section__content image-text-section--image-full-width__content">
             <h2 class="title">Baixe filmes e series.</h2>
             <p class="text--big">
