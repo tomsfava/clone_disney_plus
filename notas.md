@@ -205,7 +205,11 @@ agora vamos ajustar o botão do cabeçalho para um tamanho menor, depois retorna
 primeira coisa é alterar o font-size dos botões para 13px, o padding para 8 no topo e embaixo e 11 nas laterais e também removemos o letter-spacing;  
 depois reduzimos o max-width do logo para 64px;  
 de volta ao hero, queremos que a imagem extrapole o header, para isso adicionamos uma margem negativa do tamanho do header, isso vai mover a section hero 55px pra cima, só que a logo ainda não está na posição correta, queremos mais 25px além dos 50vw que já haviamos definido para o padding, para isso usamos a função calc com os valores 50vw + 25px;  
-em seguida na section shows, nos botões das abas, queremos remover o wrap do white-space, ou seja, remover as quebras de linha, também queremos que o overflow do eixo x seja scroll, para permitir a rolagem, adicionamos um padding-left de 20px para ajustar a posição do primeiro botão
+em seguida na section shows, nos botões das abas, queremos remover o wrap do white-space, ou seja, remover as quebras de linha, também queremos que o overflow do eixo x seja scroll, para permitir a rolagem, adicionamos um padding-left de 20px para ajustar a posição do primeiro botão;  
+em seguida voltamos a plans para espaçar o botão e o texto dos planos simplesmente estilizando a classe button dentro de plans para ter um margin-top de 24px;  
+em seguida, vamos utilizar outra imagem a seção do rei leão, para adicionar essa responsividade no corpo do html vamos usar a tag picture, ela funciona contendo uma tag source com atributo media="(max-width: 768px)" e um atributo srcset apontando para o arquivo;  
+com isso finalizamos a responsividade para celular, por algum motivo não realizamos o mesmo para tablet e depois dessa última alteração da imagem do rei leão o professor simplesmete commita as alterações para que realizemos o deploy;  
+
 
 
 
